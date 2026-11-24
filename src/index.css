@@ -1,0 +1,96 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Manrope", "Noto Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: "Manrope", sans-serif;
+  --font-subtitle: "Noto Sans", "Manrope", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+:root {
+  --bg-main: #F5F4F0;
+  --bg-secondary: #ECEBE6;
+  --bg-surface: #FFFFFF;
+  --bg-elevated: #FFFFFF;
+  --text-primary: #191B1F;
+  --text-secondary: #656973;
+  --text-muted: #92959C;
+  --border-subtle: rgba(20, 24, 30, 0.10);
+  --border-strong: rgba(20, 24, 30, 0.18);
+  --accent: #527D1D;
+  --accent-hover: #426519;
+  --accent-fg: #FFFFFF;
+  --accent-soft: rgba(82, 125, 29, 0.12);
+  --danger: #D93832;
+  --danger-soft: rgba(217, 56, 50, 0.10);
+  --success: #1D8348;
+  --success-soft: rgba(29, 131, 72, 0.10);
+  --warning: #B45309;
+  --warning-soft: rgba(180, 83, 9, 0.10);
+  --scrollbar-thumb: rgba(20, 24, 30, 0.18);
+  --scrollbar-thumb-hover: rgba(20, 24, 30, 0.34);
+}
+
+.dark {
+  --bg-main: #101114;
+  --bg-secondary: #17191E;
+  --bg-surface: #1D2027;
+  --bg-elevated: #242832;
+  --text-primary: #F2F0EA;
+  --text-secondary: #A4A6AD;
+  --text-muted: #70747E;
+  --border-subtle: rgba(255, 255, 255, 0.09);
+  --border-strong: rgba(255, 255, 255, 0.17);
+  --accent: #A9E34B;
+  --accent-hover: #BDF56B;
+  --accent-fg: #101114;
+  --accent-soft: rgba(169, 227, 75, 0.14);
+  --danger: #F06B65;
+  --danger-soft: rgba(240, 107, 101, 0.14);
+  --success: #75C99A;
+  --success-soft: rgba(117, 201, 154, 0.14);
+  --warning: #F5B041;
+  --warning-soft: rgba(245, 176, 65, 0.14);
+  --scrollbar-thumb: rgba(255, 255, 255, 0.16);
+  --scrollbar-thumb-hover: rgba(255, 255, 255, 0.30);
+}
+
+@layer base {
+  html,
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    transition: background-color 180ms ease, color 180ms ease;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: var(--accent-soft);
+    color: var(--text-primary);
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Studio scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}

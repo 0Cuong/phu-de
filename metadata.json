@@ -1,0 +1,6 @@
+{
+  "name": "SongNgữ Studio",
+  "description": "Studio tạo, tinh chỉnh và chèn phụ đề song ngữ Anh – Việt chuyên nghiệp trực tiếp vào video bằng AI và FFmpeg.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
