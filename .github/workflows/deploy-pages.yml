@@ -4,6 +4,12 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+    inputs:
+      api_base_url:
+        description: "Render backend URL (for example https://phu-de-api.onrender.com); leave blank to use the saved Actions variable"
+        required: false
+        type: string
+        default: ""
 
 permissions:
   contents: read
@@ -31,7 +37,7 @@ jobs:
         run: npm run build
         env:
           VITE_BASE_PATH: /phu-de/
-          VITE_API_BASE_URL: ${{ vars.VITE_API_BASE_URL }}
+          VITE_API_BASE_URL: ${{ github.event.inputs.api_base_url || vars.VITE_API_BASE_URL || '' }}
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload Pages artifact
