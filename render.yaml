@@ -3,9 +3,8 @@ services:
     name: phu-de-api
     runtime: docker
     region: singapore
-    # Baseline production size for FFmpeg video rendering (1 CPU / 2 GB RAM).
-    # Render bills this paid compute plan; review the price before creating the Blueprint.
-    plan: 1c-2g
+    # Free tier: $0, 0.1 CPU / 512 MB RAM. Suitable for testing and small jobs only.
+    plan: free
     dockerfilePath: ./Dockerfile
     dockerContext: .
     healthCheckPath: /api/health
